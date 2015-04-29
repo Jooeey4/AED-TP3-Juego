@@ -14,7 +14,7 @@ using namespace std;
 //Declaracion de variables globales
 bool seguir;
 string respuesta, nombre, reiniciar;
-int tema, pregunta = 1, puntos = 0, aux, vidas = 3;
+int tema, pregunta, puntos, aux, vidas;
 string preguntas[4][6], respuestas[4][6];	
 
 void incorrecto();
@@ -23,19 +23,23 @@ void cargarPreguntas();
 void cargarRespuestas();
 void parpadear();
 void preguntar();
-
+void gameOver();
 
 int main() {
 	
 	cargarPreguntas ();
 	cargarRespuestas ();
-	system("cls");
-	cout << "Ingrese su nombre: ";
-	cin >> nombre;
-	system("cls");
+	
+	
 	
 	do
 	{
+		system("cls");
+		cout << "Ingrese su nombre: ";
+		cin >> nombre;
+		system("cls");
+		vidas = 3;
+		puntos = 0;
 		do
 		{
 			
@@ -54,7 +58,7 @@ int main() {
 			cout << "\n\t4- Salir\n";
 			cout << "Ingrese el tema de las preguntas: ";
 			cin >> tema;
-			
+			pregunta = 1;
 			switch(tema)
 			{
 				case 1:
@@ -76,8 +80,8 @@ int main() {
 			
 			system("cls");
 		}
-		while (tema != 4);
-		
+		while ((tema != 4) and (vidas>0));
+		gameOver();
 		cout << "Jugador --> " << nombre << "\nPuntaje final --> " << puntos;
 		cout << "\n\nSi desea volver a jugar ingrese la letra R";
 		cin >> reiniciar;
@@ -89,6 +93,7 @@ int main() {
 void preguntar() {
 	do 
 	{
+		system("cls");
 		cout << preguntas[tema][pregunta];//muestra pregunta
 		cout << "\nRespuesta: ";
 		cin >> respuesta;//ingresa respuesta
@@ -112,16 +117,18 @@ void preguntar() {
 			vidas++;
 		}
 		
-		cout << "¿Desea salir? Si=1/No=2";//pregunta si desea continuar
-		cin >> aux;
-		if (aux == 1)
-			seguir = false;
-		else
-			seguir = true;
-		
+		if (vidas>0)
+		{
+			cout << "¿Desea salir? Si=1/No=2";//pregunta si desea continuar
+			cin >> aux;
+			if (aux == 1)
+				seguir = false;
+			else
+				seguir = true;
+		}
 		system("cls");	
 	}
-	while ( (pregunta<=5) and (seguir) );
+	while ( (pregunta<=5) and (seguir) and (vidas>0));
 } 
  
 void cargarPreguntas() {
@@ -185,6 +192,17 @@ void incorrecto() {
 	cout << "#####  #   #   ###   ###   #   #  #   #  #####   ###    #     ###  \n";
 	parpadear();
 } 
+
+void gameOver()
+{
+	system("cls");
+	cout << "\n\n ####   ###   #   #  #####     ###   #   #  #####  ####   \n";
+	cout << "#      #   #  ## ##  #        #   #  #   #  #      #   #  \n";
+	cout << "#  ##  #   #  # # #  ###      #   #  #   #  ###    ####   \n";
+	cout << "#   #  #####  #   #  #        #   #   # #   #      #  #   \n";
+	cout << " ####  #   #  #   #  #####     ###     #    #####  #   #  \n\n\n";
+	parpadear();
+}
  
 void parpadear() {
 	cout << "\a";
