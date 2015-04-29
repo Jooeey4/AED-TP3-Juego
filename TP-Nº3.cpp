@@ -8,6 +8,7 @@
 #include <iostream>
 #include<stdlib.h>
 #include <conio.h>
+#include <cstring> 
 
 using namespace std;
 
@@ -24,6 +25,8 @@ void cargarRespuestas();
 void parpadear();
 void preguntar();
 void gameOver();
+string mayuscula(string palabra);
+
 
 int main() {
 	
@@ -97,6 +100,7 @@ void preguntar() {
 		cout << preguntas[tema][pregunta];//muestra pregunta
 		cout << "\nRespuesta: ";
 		cin >> respuesta;//ingresa respuesta
+		respuesta = mayuscula(respuesta);
 		if (respuesta.compare(respuestas[tema][pregunta])==0)//verifica respuesta
 		{
 			correcto();
@@ -216,4 +220,15 @@ void parpadear() {
 		system ("color F");		
 	}
 	
+}
+
+string mayuscula(string palabra)
+{
+	int j=0;
+	while(palabra[j] != '\0') //Mientras que no encontremos el fin de cadena 
+	{ 
+	palabra[j] = toupper(palabra[j]); //Convertimos a mayusculas cada caracter 
+	j++; 
+	} 
+	return palabra;	
 }
