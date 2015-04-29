@@ -1,0 +1,49 @@
+Ingrese su nombre: joan
+
+Jugador: joan   Vidas ***       Puntos: 0
+Menu:
+        1- Deporte
+        2- Ciencia
+        3- Geografia
+        4- Salir
+Ingrese el tema de las preguntas:1
+┐Cual es el equipo mas campeon del torneo argentino?
+Respuesta: RIVER
+
+
+
+ ###   ###   ####   ####   #####   ###  #####   ###
+#     #   #  #   #  #   #  #      #       #    #   #
+#     #   #  ####   ####   ###    #       #    #   #
+#     #   #  #  #   #  #   #      #       #    #   #
+ ###   ###   #   #  #   #  #####   ###    #     ###
+┐Desea salir? Si=1/No=22
+
+┐En que equipo juega Higuain?
+Respuesta: MILAN
+
+#####  #   #   ###   ###   ####   ####   #####   ###  #####   ###
+  #    ##  #  #     #   #  #   #  #   #  #      #       #    #   #
+  #    # # #  #     #   #  ####   ####   ###    #       #    #   #
+  #    #  ##  #     #   #  #  #   #  #   #      #       #    #   #
+#####  #   #   ###   ###   #   #  #   #  #####   ###    #     ###
+┐Desea salir? Si=1/No=21
+
+Jugador: joan   Vidas **        Puntos: 10
+Menu:
+        1- Deporte
+        2- Ciencia
+        3- Geografia
+        4- Salir
+Ingrese el tema de las preguntas:4
+
+Jugador --> joan
+Puntaje final --> 10
+
+Si desea volver a jugar ingrese la letra R
+
+
+
+
+
+
